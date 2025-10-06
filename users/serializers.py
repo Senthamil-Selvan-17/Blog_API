@@ -9,7 +9,7 @@ class SignupSerializer(serializers.ModelSerializer):
         fields = ['username', 'email', 'password']
 
     def create(self, validated_data):
-        user = User.objects.create_user(
+        user = User.objects.create_user(  #create user helps to hash the password
             username= validated_data['username'],
             email= validated_data['email'],
             password= validated_data['password']
